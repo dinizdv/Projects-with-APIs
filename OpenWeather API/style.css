@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@100;200;300;400&display=swap');
+
+body {
+   background-color: black;
+   font-family: Poppins;
+}
+.container {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+}
+h1 {
+   font-size: 2rem;
+   word-spacing: 6px;
+   color: #F3E96B;
+}
+h2 {
+   color: #9238e5;
+}
+header {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+input {
+   width: 70%;
+   padding: 6px 16px;
+}
+#inputText, #btnSearch {
+   outline: none;
+   font-size: 1.2rem;
+   outline: none;
+   box-shadow: inset 0 0 6px aliceblue;
+   color: black;
+   background-color: aliceblue;
+}
+#btnSearch {
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.content {
+   display: none;
+}
+.content {
+   margin: 12px 0 0 0;
+   padding: 12px 0;
+   box-shadow: inset 0 0 12px aliceblue;
+   background-color: aliceblue;
+}
+
+h2, span, img {
+   padding: 6px 0;
+}
+#section-info {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   line-height: 16px;
+}
+#imgWeather {
+   width: 120px;
+}
+.card {
+   box-shadow: 0 0 12px aliceblue;
+   background-color: #121212;
+}
+.content {
+   background-color: aliceblue;
+   box-shadow: none;
+}
