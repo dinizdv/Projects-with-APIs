@@ -19,33 +19,34 @@ btn.addEventListener("click", () => {
 // asynchronous function to fetch the data from the API
 async function getDataApi() {
  // create the API URL with the city name and the API key
- // openweathermap.org -> domínio da API + (data/2.5/weather) -> endpoint da localização específica
- // ?q= -> consulta da URL (localização específica)
- // encodeURI -> função que codifica o valor do input do usuário
- // units&metric -> unidades em métricas (Celsius)
- // appid -> autenticar sua aplicação com a API
- let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input.value)}&units=metric&appid=84b6974aa10f564240843838a3c6305c`;
+ // openweathermap.org -> API domain + (data/2.5/weather) -> specific location endpoint
+ // ?q= -> URL query (specific location)
+ // encodeURI -> function that encodes the user's input value
+ // units&metric -> units in metric (Celsius)
+ // appid -> authenticate your application with the API
+ let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input.value)}&units=metric&appid={your id}`;
+// obtain your id at https://openweathermap.org/
 
- // tentar executar um bloco
+ // try to execute a block
  try {
-     // make the request to the API
-     // await -> pausar o código até que a promise seja resolvida ou rejeitada
-     // fetch -> requisição à URL fornecida
-     const res = await fetch(url);
-          // ler o corpo da resposta e analisá-lo como JSON
-     const data = await res.json();
+    // make the request to the API
+    // await -> pause the code until the promise is resolved or rejected
+    // fetch -> request to the provided URL
+    const res = await fetch(url);
+         // read the response body and parse it as JSON
+    const data = await res.json();
 
-     // if the API response is an error (code 404), display an alert
-     // data existe? data tem propriedade chamada 'cod'? data é igual a '404'? false or true
-     if (data?.cod && data.cod === '404') {
-         return alert('Location not found!');
-     }
+    // if the API response is an error (code 404), display an alert
+    // data exists? data has a property called 'cod'? data equals '404'? false or true
+    if (data?.cod && data.cod === '404') {
+        return alert('Location not found!');
+    }
 
-     // call the function to display the data
-     loadData(data);
+    // call the function to display the data
+    loadData(data);
  } catch (error) {
-     // if there is an error in the request, display the error
-     alert(error);
+    // if there is an error in the request, display the error
+    alert(error);
  }
 }
 
@@ -59,13 +60,13 @@ function loadData(data) {
 
  // set the appropriate image based on the temperature
  if (data.main.temp < 5) {
-     img.src = `Images/Cold.png`;
+    img.src = `Images/Cold.png`;
  } else if (data.main.temp >= 6 && data.main.temp <= 17) {
-     img.src = `Images/Cloud.png`;
+    img.src = `Images/Cloud.png`;
  } else if (data.main.temp >= 18 && data.main.temp < 25) {
-     img.src = `Images/SunWithCloud.png`;
+    img.src = `Images/SunWithCloud.png`;
  } else if (data.main.temp >= 25) {
-     img.src = `Images/Sun.png`;
+    img.src = `Images/Sun.png`;
  }
 
  // display the wind speed
